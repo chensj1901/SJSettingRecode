@@ -9,6 +9,10 @@
 #import "SJSettingRecode.h"
 
 @implementation SJSettingRecode
++(void)load{
+    [self initDB];
+}
+
 +(void)initDB{
     if (![self hasInstall]) {
         NSString *sql=@"CREATE TABLE \"HTSG_PUSH_SETTING\" (\"setting_name\" text NOT NULL, \"value\" Varchar(255,0) NOT NULL,PRIMARY KEY(\"setting_name\"))";
